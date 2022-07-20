@@ -24,5 +24,5 @@ predict_button = st.button('Predict Price')
 
 if predict_button:
 
-    price = loaded_model.predict(input_df)
+    price = np.abs(loaded_model.predict(input_df))
     st.metric('Estimated Price', price.round(0))
